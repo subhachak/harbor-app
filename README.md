@@ -55,7 +55,7 @@ they change with it in the same pull request.
 
 ## Stories
 
-`qa/features/` holds seven stories, each with an Android and an iOS feature
+`qa/features/` holds eight stories, each with an Android and an iOS feature
 file. Most steps map by rules; the rest are left on purpose for what
 follows them (Copilot, a fallback, a person):
 
@@ -68,6 +68,7 @@ follows them (Copilot, a fallback, a person):
 | STORY-205 Premier upsell for Basic members | a locked feature and the upgrade modal | none |
 | STORY-206 Activity and statements | list filters and rows from records | `I open document "d1"`: accessibilityLabel only, Copilot |
 | STORY-207 Enrolling | typing into a form | `I enter date of birth`: no testID, placeholder only |
+| STORY-208 Harbor showcase | every capability once, for a demo: rules, records as parameters, a Scenario Outline, screen context from navigation, two personas, platform-gated steps and the date-wheels adapter, a runtime-state warning | `I tap Quarterly`: fallback from the FREQUENCIES label, approved by a person; `I open document "d1"`: Copilot maps it, a person approves |
 
 
 ## Testing it
