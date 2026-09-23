@@ -68,7 +68,7 @@ follows them (Copilot, a fallback, a person):
 | STORY-205 Premier upsell for Basic members | a locked feature and the upgrade modal | none |
 | STORY-206 Activity and statements | list filters and rows from records; a statement found only by its accessibilityLabel (a weak locator), named as a row of the DOCUMENTS list | none |
 | STORY-207 Enrolling | typing into a form | `I enter date of birth`: no testID, placeholder only |
-| STORY-208 Harbor showcase | every capability once, for a demo: rules, records as parameters, a Scenario Outline, screen context from navigation, two personas, platform-gated steps and the date-wheels adapter, a runtime-state warning | `I tap Quarterly`: fallback from the FREQUENCIES label, approved by a person; `I go to my statements`: Copilot maps it, a person approves |
+| STORY-208 Harbor showcase | every capability once, for a demo: rules, records as parameters, a Scenario Outline, screen context from navigation, two personas, platform-gated steps and the date-wheels adapter, the system date dialog on Android, a runtime-state warning | `I tap Quarterly`: fallback from the FREQUENCIES label, approved by a person; `I go to my statements`: Copilot maps it, a person approves; on Android, `I tap Next month`, `I tap 15`, `I tap OK` in the system date dialog: not in the app's source, found on the live screen, a person approves |
 
 
 ## Testing it

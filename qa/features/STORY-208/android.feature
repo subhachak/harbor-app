@@ -12,8 +12,11 @@ Feature: Harbor showcase
     against the persona; "Quarterly" has no testID but its label comes from
     a constant list, so it runs on a device-validated fallback once a person
     approves it; the date step uses the vendor adapter on iOS and checks the
-    platform-gated button on Android; "Done" is on two screens and the
-    screen context picks the right one.
+    platform-gated button on Android; on Android the date is picked in the
+    system's own date dialog, which is not in the app's source at all, so
+    "Next month", "15", and "OK" are found on the live screen by a discovery
+    run and approved by a person; "Done" is on two screens and the screen
+    context picks the right one.
     Given the login screen is displayed
     When I enter username "member.entitled"
     And I enter password "Harbor123!"
@@ -28,6 +31,11 @@ Feature: Harbor showcase
     And I tap First contribution
     Then the choose a date button is displayed
     And the date wheels are not displayed
+    When I tap Choose a date
+    And I tap Next month
+    And I tap 15
+    And I tap OK
+    Then the selected date is displayed
     When I tap Done
     Then the contribute summary is displayed
     When I tap Submit contribution
