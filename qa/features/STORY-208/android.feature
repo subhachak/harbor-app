@@ -85,14 +85,17 @@ Feature: Harbor showcase
 
   @persona:entitled
   Scenario: A member opens a statement
-    Statements carry only an accessibilityLabel (a weak locator) built from
-    each document's title and period, so no rule can name one: the Copilot
-    agent proposes the mapping, the gate checks it, and a person approves it.
+    "I go to my statements" is how a person talks, and no rule parses it: the
+    Copilot agent proposes the mapping from the evidence (the Statements
+    button on Home, the screen the scenario is on), the gate checks it, and a
+    person approves it. The statement itself has only an accessibilityLabel
+    (a weak locator), but it is drawn from the DOCUMENTS list, so the rules
+    know "document d1" is one of its rows.
     Given the login screen is displayed
     When I enter username "member.entitled"
     And I enter password "Harbor123!"
     And I tap Log In
     Then the home screen is displayed
-    When I tap Statements
+    When I go to my statements
     Then the documents screen is displayed
     When I open document "d1"

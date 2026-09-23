@@ -66,9 +66,9 @@ follows them (Copilot, a fallback, a person):
 | STORY-203 Making a contribution | quick amounts from records, a Scenario Outline, a runtime-state error | `I tap Cancel` and `I tap Quarterly`: no testID, device-validated fallbacks (Quarterly's label comes from the constant FREQUENCIES list) |
 | STORY-204 Scheduling the first contribution | platform-gated UI: iOS date wheels through the vendor adapter, the Android date button | none |
 | STORY-205 Premier upsell for Basic members | a locked feature and the upgrade modal | none |
-| STORY-206 Activity and statements | list filters and rows from records | `I open document "d1"`: accessibilityLabel only, Copilot |
+| STORY-206 Activity and statements | list filters and rows from records; a statement found only by its accessibilityLabel (a weak locator), named as a row of the DOCUMENTS list | none |
 | STORY-207 Enrolling | typing into a form | `I enter date of birth`: no testID, placeholder only |
-| STORY-208 Harbor showcase | every capability once, for a demo: rules, records as parameters, a Scenario Outline, screen context from navigation, two personas, platform-gated steps and the date-wheels adapter, a runtime-state warning | `I tap Quarterly`: fallback from the FREQUENCIES label, approved by a person; `I open document "d1"`: Copilot maps it, a person approves |
+| STORY-208 Harbor showcase | every capability once, for a demo: rules, records as parameters, a Scenario Outline, screen context from navigation, two personas, platform-gated steps and the date-wheels adapter, a runtime-state warning | `I tap Quarterly`: fallback from the FREQUENCIES label, approved by a person; `I go to my statements`: Copilot maps it, a person approves |
 
 
 ## Testing it
