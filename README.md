@@ -3,7 +3,7 @@
 An Expo / React Native demo app: a retirement account with two personas,
 four tabs, plans, contributions, activity, and statements. It is the app
 under test for the grounding harness
-([grounding-harness](../grounding-harness)), which generates Appium tests
+([grounding-harness](https://github.com/subhachak/grounding-harness)), which generates Appium tests
 from the stories in `qa/` by reading this source.
 
 ## Run it
