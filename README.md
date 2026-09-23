@@ -72,6 +72,14 @@ follows them (Copilot, a fallback, a person):
 
 ## Testing it
 
-Open `grounding-harness/harbor.code-workspace` in VS Code: it holds both
-repositories, and the harness is configured to test this one. See the
-harness README.
+Clone [grounding-harness](https://github.com/subhachak/grounding-harness)
+next to this repository. It finds this app, its stories in `qa/features/`,
+and its test data with no configuration:
+
+```bash
+git clone https://github.com/subhachak/grounding-harness.git
+cd grounding-harness && npm install
+npm run doctor          # what it found
+npm run workspace       # a VS Code workspace with both repositories
+npm run story -- STORY-201
+```
