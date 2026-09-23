@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Harbor",
+    "slug": "harbor-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.harbor"
+    },
+    "android": {
+      "package": "com.example.harbor"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "enableSceneSupport": true
+          }
+        }
+      ],
+      "@react-native-community/datetimepicker"
+    ]
+  }
+}
