@@ -2,17 +2,30 @@
   "personas": {
     "entitled": {
       "username": "member.entitled",
+      "password": {
+        "env": "HARBOR_DEMO_PASSWORD"
+      },
       "props": {
         "isEntitled": true
       }
     },
     "restricted": {
       "username": "member.restricted",
+      "password": {
+        "env": "HARBOR_DEMO_PASSWORD"
+      },
       "props": {
         "isEntitled": false
       }
     }
   },
+  "signIn": [
+    "the login screen is displayed",
+    "I enter username \"{username}\"",
+    "I enter password \"{password}\"",
+    "I tap Log In",
+    "the home screen is displayed"
+  ],
   "records": {
     "members": {
       "entitled": {
