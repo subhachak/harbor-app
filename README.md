@@ -91,6 +91,7 @@ journey a device can run, which a second person approves.
 | HRB-312 Balance card | component tests: test data set up in the step, a gradient background, `home-balance-change` (not in the app), and an iOS-only scenario started with `the member is on iOS` | written for component tests: 5 not device steps, 1 testID not found |
 | HRB-313 Statements retry | a journey, with quoted testIDs: a Basic member signs in, sees the error, retries, and opens a statement | ready: every step maps by rules, with runtime-state warnings for the error, the retry, and the rows |
 | HRB-314 Signed in with test data | journeys that start `Given I am signed in as "<persona>"` instead of typing credentials: two personas from the test data, whose password is kept out of files (`HARBOR_DEMO_PASSWORD`), and a third ("returning") the test data does not have | needs test data: the harness asks once which account "returning" is and for the passwords (`npm run testdata`, or before a run), and remembers who entered them |
+| HRB-315 Statements from a fresh start | a Background the way teams write them: `the member is on Android`, `the member has not signed in yet`, `no statements are cached yet` | Android only (iOS reports it as left out); the two starting states wait for one confirmation each, then every scenario starts from a fresh install |
 
 The test data (`qa/test-data/testdata.json`) has the app's sign-in as
 `signIn` steps, and its personas name their password only as an environment
