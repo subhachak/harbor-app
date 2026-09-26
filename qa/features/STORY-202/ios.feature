@@ -7,11 +7,12 @@ Feature: Plans by membership
   @persona:entitled
   Scenario: A Premier member reviews a plan they can contribute to
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
-    When I tap manage plans
+    When I tap Menu
+    And I tap Plans
     Then the plans screen is displayed
     And plan "p1" shows the active badge
     And plan "p2" shows the restricted badge
@@ -23,11 +24,12 @@ Feature: Plans by membership
   @persona:restricted
   Scenario: A Basic member is invited to upgrade from a plan
     Given the login screen is displayed
-    When I enter username "member.restricted"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{restricted.username}"
+    And I enter password "{restricted.password}"
+    And I tap Sign in
     Then the home screen is displayed
-    When I tap manage plans
+    When I tap Menu
+    And I tap Plans
     Then the plans screen is displayed
     When I open plan "p2"
     Then the upgrade prompt is displayed

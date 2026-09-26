@@ -7,17 +7,18 @@ Feature: Balance card on the home screen
     Given a member exists with 3 plans
     When the HomeScreen renders
     Then the element with testID "home-balance-amount" displays "$82,452.45"
-    And the element with testID "home-balance-card" has a navy gradient background
+    And the element with testID "total-portfolio-value-card" has a navy gradient background
     And the element with testID "home-balance-change" displays "+$2,347.45 this month"
 
   @ios
-  Scenario: The avatar opens the profile on iOS
+  Scenario: The menu opens the profile on iOS
     Given the member is on iOS
-    When the user taps the button "home-avatar-button"
+    When the user taps the button "menu-button"
+    And the user taps the button "overview-navigation-menu-profile"
     Then the element with testID "profile-screen" is displayed
 
-  Scenario: Statements open from the quick actions
+  Scenario: Statements open from the message center
     Given the HomeScreen has loaded
-    When the user taps the button "home-documents-action"
+    When the user taps the button "message-center-button"
     Then the element with testID "documents-screen" is displayed
     And the element with testID "documents-loading" is displayed

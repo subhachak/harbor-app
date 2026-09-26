@@ -13,12 +13,14 @@ Feature: Statements from a fresh start, on Android
 
   Scenario: A Basic member retries their statements after an outage
     Given I am signed in as "restricted"
-    When I tap Statements
+    When I tap Menu
+    And I tap Statements
     Then the element with testID "documents-error-text" displays "Statements are unavailable right now."
     When I tap the element with testID "documents-retry-button"
     And I open document "d1"
 
   Scenario: A Premier member sees their statements straight away
     Given I am signed in as "entitled"
-    When I tap Statements
+    When I tap Menu
+    And I tap Statements
     And I open document "d1"

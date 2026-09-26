@@ -11,6 +11,6 @@ Feature: Enrolling
     When I enter full name "Sam Rivera"
     And I enter email address "sam@example.com"
     And I enter date of birth "01/02/1990"
-    And I enter the enroll password "Harbor123!"
+    And I enter the enroll password "{entitled.password}"
     And I tap Back to sign in
     Then the login screen is displayed

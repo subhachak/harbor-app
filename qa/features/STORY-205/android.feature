@@ -7,9 +7,9 @@ Feature: Premier upsell for Basic members
   @persona:restricted
   Scenario: A Basic member opens contributions and looks at Premier
     Given the login screen is displayed
-    When I enter username "member.restricted"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{restricted.username}"
+    And I enter password "{restricted.password}"
+    And I tap Sign in
     Then the home screen is displayed
     When I tap Contribute
     Then the contribute locked panel is displayed

@@ -13,6 +13,7 @@ export function Button({
   icon,
   disabled,
   loading,
+  shape = 'rounded',
 }: {
   testID?: string;
   title: string;
@@ -21,6 +22,7 @@ export function Button({
   icon?: keyof typeof Ionicons.glyphMap;
   disabled?: boolean;
   loading?: boolean;
+  shape?: 'rounded' | 'pill';
 }) {
   const v = VARIANTS[variant];
   return (
@@ -29,7 +31,7 @@ export function Button({
       onPress={onPress}
       disabled={disabled || loading}
       activeOpacity={0.8}
-      style={[styles.base, { backgroundColor: v.bg, borderColor: v.border }, (disabled || loading) && styles.disabled]}
+      style={[styles.base, shape === 'pill' && styles.pill, { backgroundColor: v.bg, borderColor: v.border }, (disabled || loading) && styles.disabled]}
     >
       {loading ? (
         <ActivityIndicator color={v.fg} />
@@ -55,4 +57,5 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   label: { ...type.body, fontWeight: '600' },
   disabled: { opacity: 0.5 },
+  pill: { minHeight: 48, borderRadius: radius.pill },
 });

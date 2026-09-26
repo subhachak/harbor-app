@@ -3,6 +3,7 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import AccountRecoveryScreen from '../screens/AccountRecoveryScreen';
 import ActivityScreen from '../screens/ActivityScreen';
 import ContributeScreen from '../screens/ContributeScreen';
 import ContributionConfirmationScreen from '../screens/ContributionConfirmationScreen';
@@ -65,7 +66,8 @@ export default function RootNavigator() {
         }}
       >
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Enroll" component={EnrollScreen} options={{ title: 'Create your account' }} />
+        <Stack.Screen name="Enrollment" component={EnrollScreen} options={{ title: 'Create your account' }} />
+        <Stack.Screen name="AccountRecovery" component={AccountRecoveryScreen} options={{ title: 'Account recovery' }} />
         <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
         <Stack.Screen name="PlanDetails" component={PlanDetailsScreen} options={{ title: 'Plan details' }} />
         <Stack.Screen name="Contribute" component={ContributeScreen} options={{ title: 'Make a contribution' }} />

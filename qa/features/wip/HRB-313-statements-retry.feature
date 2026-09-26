@@ -7,11 +7,12 @@ Feature: Statements retry after an outage
 
   Scenario: A Basic member retries their statements after an error
     Given the login screen is displayed
-    When I enter username "member.restricted"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{restricted.username}"
+    And I enter password "{restricted.password}"
+    And I tap Sign in
     Then the home screen is displayed
-    When I tap Statements
+    When I tap Menu
+    And I tap Statements
     Then the element with testID "documents-error-text" displays "Statements are unavailable right now."
     When I tap the element with testID "documents-retry-button"
     And I open document "d1"

@@ -7,9 +7,9 @@ Feature: Scheduling the first contribution
   @persona:entitled
   Scenario: A Premier member picks the first contribution date
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
     When I tap Contribute
     And I tap First contribution

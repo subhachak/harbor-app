@@ -8,7 +8,7 @@ Feature: Harbor showcase
     Rules map steps by visible text and testID words; test-data records fill
     templated testIDs as parameters; navigation read from the source tells
     the rules which screen a tap lands on, so the plan tapped right after
-    "manage plans" is the one on Plans; persona-gated elements are checked
+    "Plans" in the menu is the one on Plans; persona-gated elements are checked
     against the persona; "Quarterly" has no testID but its label comes from
     a constant list, so it runs on a device-validated fallback once a person
     approves it; the date step uses the vendor adapter on iOS and checks the
@@ -18,11 +18,12 @@ Feature: Harbor showcase
     run and approved by a person; "Done" is on two screens and the screen
     context picks the right one.
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
-    When I tap manage plans
+    When I tap Menu
+    And I tap Plans
     And I open plan "p1"
     Then the contribution amount is displayed
     When I tap Make a contribution
@@ -43,11 +44,12 @@ Feature: Harbor showcase
     (Active needs plan.entitled, Restricted needs its opposite), and each
     step becomes one definition with the plan as a parameter.
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
-    When I tap manage plans
+    When I tap Menu
+    And I tap Plans
     Then the plans screen is displayed
     And plan "<plan>" shows the <badge> badge
 
@@ -63,9 +65,9 @@ Feature: Harbor showcase
     and the form does not for this persona; "See Premier benefits" is on two
     screens, and the tap on Contribute says which.
     Given the login screen is displayed
-    When I enter username "member.restricted"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{restricted.username}"
+    And I enter password "{restricted.password}"
+    And I tap Sign in
     Then the home screen is displayed
     When I tap Contribute
     Then the contribute locked panel is displayed
@@ -78,9 +80,9 @@ Feature: Harbor showcase
     The error depends on runtime state, not on the persona: the gate warns
     that it cannot check it statically instead of failing the scenario.
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
     When I tap Contribute
     And I tap Submit contribution
@@ -95,9 +97,9 @@ Feature: Harbor showcase
     (a weak locator), but it is drawn from the DOCUMENTS list, so the rules
     know "document d1" is one of its rows.
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
     When I go to my statements
     Then the documents screen is displayed

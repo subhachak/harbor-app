@@ -2,18 +2,14 @@
   "personas": {
     "entitled": {
       "username": "member.entitled",
-      "password": {
-        "env": "HARBOR_DEMO_PASSWORD"
-      },
+      "password": "Harbor123!",
       "props": {
         "isEntitled": true
       }
     },
     "restricted": {
       "username": "member.restricted",
-      "password": {
-        "env": "HARBOR_DEMO_PASSWORD"
-      },
+      "password": "Harbor123!",
       "props": {
         "isEntitled": false
       }
@@ -23,9 +19,21 @@
     "the login screen is displayed",
     "I enter username \"{username}\"",
     "I enter password \"{password}\"",
-    "I tap Log In",
+    "I tap Sign in",
     "the home screen is displayed"
   ],
+  "seeds": {
+    "previously logged in": {
+      "note": "A participant who has signed in before and signed out: the Login screen then greets them with Welcome back.",
+      "steps": [
+        "I am signed in as \"entitled\"",
+        "I tap Menu",
+        "I tap Profile",
+        "I tap Sign out",
+        "the login screen is displayed"
+      ]
+    }
+  },
   "records": {
     "members": {
       "entitled": {

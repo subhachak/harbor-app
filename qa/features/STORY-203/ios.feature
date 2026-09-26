@@ -7,9 +7,9 @@ Feature: Making a contribution
   @persona:entitled
   Scenario: A Premier member contributes a quick amount
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
     When I tap Contribute
     Then the contribute form is displayed
@@ -24,9 +24,9 @@ Feature: Making a contribution
   @persona:entitled
   Scenario Outline: Each quick amount fills in the summary
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
     When I tap Contribute
     And I select amount "<amount>"
@@ -40,9 +40,9 @@ Feature: Making a contribution
   @persona:entitled
   Scenario: Submitting without an amount shows an error
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
     When I tap Contribute
     And I tap Submit contribution
@@ -51,9 +51,9 @@ Feature: Making a contribution
   @persona:entitled
   Scenario: A member cancels a contribution
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
     When I tap Contribute
     And I tap Cancel
@@ -62,9 +62,9 @@ Feature: Making a contribution
   @persona:entitled
   Scenario: A member makes the contribution quarterly
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
     When I tap Contribute
     And I select amount "250"

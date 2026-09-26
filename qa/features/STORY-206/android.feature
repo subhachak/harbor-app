@@ -7,11 +7,12 @@ Feature: Activity and statements
   @persona:entitled
   Scenario: A member filters their activity
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
-    When I tap Activity
+    When I tap Menu
+    And I tap Activity
     Then the activity screen is displayed
     When I select filter "fee"
     Then activity "t3" shows the amount
@@ -21,10 +22,11 @@ Feature: Activity and statements
   @persona:entitled
   Scenario: A member opens a statement
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
-    When I tap Statements
+    When I tap Menu
+    And I tap Statements
     Then the documents screen is displayed
     When I open document "d1"

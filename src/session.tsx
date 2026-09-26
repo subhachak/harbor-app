@@ -15,6 +15,12 @@ export interface ContributionDraft {
 
 interface Session {
   member: Member | null;
+  // The last member who signed in, and whether anyone has, for as long as
+  // the app runs: the sign-in screen greets them back and shows their
+  // username masked, with "Not you?" to clear it (a real app keeps this on
+  // the device; a fresh install has neither).
+  lastUsername: string | null;
+  signedInBefore: boolean;
   isEntitled: boolean;
   signIn: (username: string) => boolean;
   signOut: () => void;
@@ -28,13 +34,17 @@ const newDraft = (): ContributionDraft => ({ planId: 'p1', amount: '', frequency
 
 export function SessionProvider({ children }: { children: React.ReactNode }) {
   const [member, setMember] = useState<Member | null>(null);
+  const [lastUsername, setLastUsername] = useState<string | null>(null);
   const [draft, setDraft] = useState<ContributionDraft>(newDraft);
   const value: Session = {
     member,
+    lastUsername,
+    signedInBefore: lastUsername !== null,
     isEntitled: member?.isEntitled ?? false,
     signIn: (username) => {
       const found = MEMBERS[username.trim().toLowerCase()];
       setMember(found ?? null);
+      if (found) setLastUsername(found.username);
       return Boolean(found);
     },
     signOut: () => {

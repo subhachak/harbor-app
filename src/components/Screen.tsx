@@ -11,18 +11,21 @@ export function Screen({
   scroll = true,
   edges = [],
   style,
+  background,
 }: {
   testID?: string;
   children: React.ReactNode;
   scroll?: boolean;
   edges?: Edge[];
   style?: ViewStyle;
+  background?: string; // the page colour, when not the app background
 }) {
+  const bg = background ? { backgroundColor: background } : null;
   return (
-    <View testID={testID} style={styles.root}>
-      <SafeAreaView edges={edges} style={styles.root}>
+    <View testID={testID} style={[styles.root, bg]}>
+      <SafeAreaView edges={edges} style={[styles.root, bg]}>
         {scroll ? (
-          <ScrollView contentContainerStyle={[styles.content, style]} showsVerticalScrollIndicator={false}>
+          <ScrollView contentContainerStyle={[styles.content, style]} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
             {children}
           </ScrollView>
         ) : (

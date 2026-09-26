@@ -7,9 +7,9 @@ Feature: Signing in and out
   @persona:entitled
   Scenario: A Premier member signs in and sees their balance
     Given the login screen is displayed
-    When I enter username "member.entitled"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{entitled.username}"
+    And I enter password "{entitled.password}"
+    And I tap Sign in
     Then the home screen is displayed
     And the greeting is displayed
     And the balance amount is displayed
@@ -18,18 +18,20 @@ Feature: Signing in and out
   Scenario: An unknown username is refused
     Given the login screen is displayed
     When I enter username "nobody"
-    And I tap Log In
-    Then the login error is displayed
+    And I enter password "any-password"
+    And I tap Sign in
+    Then the text "We couldn't find an account with that username." is displayed
     And the login screen is displayed
 
   @persona:restricted
   Scenario: A Basic member checks their membership and signs out
     Given the login screen is displayed
-    When I enter username "member.restricted"
-    And I enter password "Harbor123!"
-    And I tap Log In
+    When I enter username "{restricted.username}"
+    And I enter password "{restricted.password}"
+    And I tap Sign in
     Then the home screen is displayed
-    When I tap my avatar
+    When I tap Menu
+    And I tap Profile
     Then the profile screen is displayed
     And the basic badge is displayed
     And the premier badge is not displayed
