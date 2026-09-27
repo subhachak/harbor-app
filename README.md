@@ -47,7 +47,7 @@ src/navigation/RootNavigator.tsx   stack + tabs
 src/screens/                   one file per screen, each opening with the grounding case it shows
 qa/features/<story>/           android.feature + ios.feature per story
 qa/features/wip/               one file per story, named by its key (HRB-311-....feature)
-qa/test-data/testdata.json     personas and records the stories use
+qa/test-data-example/testdata.json   an example of the test data the stories need (not read by the harness)
 ```
 
 The stories and test data live here, next to the code they describe, so
@@ -111,7 +111,12 @@ journey a device can run, which a second person approves.
 | HRB-316 Login screen | the sign-in screen and where each action leads, written the way a production team wrote the same story (mirrored step for step, flaws included): a setup step, "should be visible and editable", a copyright that differs from the app's, an outline whose scenarios share a name, a tap on Set up access (not built yet); plus signing in and landing on the overview | before readings, the rules map 2 of 33 steps; with readings, 25 are grounded, 4 are looked for on the live screen (logo, biometric button, subtitle, copyright), the returning participant is set up by a seed from the test data, 2 go to a person ("Accounts" after an empty Sign in, Set up access), 1 is not built yet; `npm run quality` lists the story's fixes |
 | HRB-315 Statements from a fresh start | a Background the way teams write them: `the member is on Android`, `the member has not signed in yet`, `no statements are cached yet` | Android only (iOS reports it as left out); the two starting states wait for one confirmation each, then every scenario starts from a fresh install |
 
-The test data (`qa/test-data/testdata.json`) holds the accounts (personas,
+Like a real app's repository, Harbor keeps no test data where the harness
+looks: before a run, the harness asks for what the stories need (the test
+accounts and their passwords, how to sign in, and how a state a story assumes
+comes about) and keeps the answers on that machine.
+`qa/test-data-example/testdata.json` shows what the answers amount to. Such a
+file (`qa/test-data/testdata.json` when a team shares one) holds the accounts (personas,
 with their passwords in plain text), records, and the app's sign-in as
 `signIn` steps. Stories name what they use from it rather than spelling it
 out: `I enter username "{entitled.username}"`, `I enter password
