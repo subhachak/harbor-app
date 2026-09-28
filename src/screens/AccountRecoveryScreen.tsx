@@ -15,8 +15,20 @@ export default function AccountRecoveryScreen() {
       </Text>
       <Text style={styles.subtitle}>We will send a code to the email or phone on your account.</Text>
       <Card>
-        <ListRow testID="account-recovery-forgot-username-row" title="Forgot username" icon="person-outline" onPress={() => Alert.alert('Forgot username', 'We sent your username to your email (simulated).')} />
-        <ListRow testID="account-recovery-forgot-password-row" title="Forgot password" icon="key-outline" onPress={() => Alert.alert('Forgot password', 'We sent a reset code to your email (simulated).')} />
+        <ListRow
+          testID="account-recovery-forgot-username-row"
+          title="Forgot username"
+          subtitle="Verify your identity to retrieve it"
+          icon="person-outline"
+          onPress={() => Alert.alert('Forgot username', 'We sent your username to your email (simulated).')}
+        />
+        <ListRow
+          testID="account-recovery-forgot-password-row"
+          title="Forgot password"
+          subtitle="Reset it using your username"
+          icon="key-outline"
+          onPress={() => Alert.alert('Forgot password', 'We sent a reset code to your email (simulated).')}
+        />
       </Card>
     </Screen>
   );

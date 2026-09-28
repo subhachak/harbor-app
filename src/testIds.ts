@@ -15,6 +15,7 @@ export const HOME = {
   snapshotHeader: 'plan-snapshot-header',
   snapshotTitle: 'plan-snapshot-title',
   snapshotAsOf: 'plan-snapshot-asof',
+  addPlanAction: 'home-add-new-plan-button',
   contributeAction: 'home-contribute-action',
   projected: 'projected-at-retirement-card',
   navigationMenu: 'overview-navigation-menu',

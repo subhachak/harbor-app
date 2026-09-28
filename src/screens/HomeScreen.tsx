@@ -192,6 +192,14 @@ export default function HomeScreen({ navigation }: any) {
             </Pressable>
           ))}
 
+          <Button
+            shape="pill"
+            title="+ Add new plan"
+            icon="add-outline"
+            onPress={() => navigation.navigate("Enrollment")}
+            testID={HOME.addPlanAction}
+          />
+
           {/* Contribution planning */}
           <Card>
             <Text style={styles.cardTitle}>Grow your savings</Text>
